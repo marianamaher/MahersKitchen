@@ -9,12 +9,14 @@ export class RecipeService {
 
     constructor(private shoppingListService: ShoppingListService){}
 
+    recipesChanged = new Subject<Recipe[]>();
+
     private recipes: Recipe[] = [
         new Recipe('Chana Masala',
             'This is simply a test',
             'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/08/chana-masala-recipe.jpg',
             [new Ingredient('Chickpeas can', 1),
-            new Ingredient('Vegetable Broth Bottle', 0.5),
+            new Ingredient('Vegetable Broth Bottle', 1),
             new Ingredient('Lentils cup', 1),
             new Ingredient('Coconut Milk can', 1),
 
@@ -42,5 +44,21 @@ export class RecipeService {
     getRecipe(id: number){
         return this.recipes[id];
     }
+
+    addRecipe(recipe: Recipe){
+        this.recipes.push(recipe);
+        this.recipesChanged.next(this.recipes.slice())
+    }
+
+    updateRecipe(index: number, newRecipe: Recipe){
+        this.recipes[index] = newRecipe;
+        this.recipesChanged.next(this.recipes.slice())
+    }
+
+    deleteRecipe(index: number){
+        this.recipes.splice(index,1);
+        this.recipesChanged.next(this.recipes.slice());
+    }
+
 
 }
