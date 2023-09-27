@@ -1,3 +1,10 @@
 .item{
     background-color: lightcoral;
 }
+
+#unique{
+    width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

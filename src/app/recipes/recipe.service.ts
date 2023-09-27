@@ -13,7 +13,7 @@ export class RecipeService {
 
     private recipes: Recipe[] = [
         new Recipe('Chana Masala',
-            'This is simply a test',
+            'Also known as the chickpeas of heaven! 👩🏽‍🍳 Prepation: Drizzle oil and salté the shredded carrots until golden.',
             'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/08/chana-masala-recipe.jpg',
             [new Ingredient('Chickpeas can', 1),
             new Ingredient('Vegetable Broth Bottle', 1),
@@ -23,7 +23,7 @@ export class RecipeService {
             ]
         ),
         new Recipe('Chana Bateta',
-            'This is simply a test',
+            'This is simply a test ',
             'https://thismomskitchen.com/wp-content/uploads/Chana-Bateta.jpg',
             [
                 new Ingredient('Potatoes', 4),
