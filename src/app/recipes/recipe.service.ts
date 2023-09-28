@@ -11,26 +11,31 @@ export class RecipeService {
 
     recipesChanged = new Subject<Recipe[]>();
 
-    private recipes: Recipe[] = [
-        new Recipe('Chana Masala',
-            'Also known as the chickpeas of heaven! 👩🏽‍🍳 Prepation: Drizzle oil and salté the shredded carrots until golden.',
-            'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/08/chana-masala-recipe.jpg',
-            [new Ingredient('Chickpeas can', 1),
-            new Ingredient('Vegetable Broth Bottle', 1),
-            new Ingredient('Lentils cup', 1),
-            new Ingredient('Coconut Milk can', 1),
+    private recipes: Recipe[] = [];
+        // new Recipe('Chana Masala',
+        //     'Also known as the chickpeas of heaven! 👩🏽‍🍳 Prepation: Drizzle oil and salté the shredded carrots until golden.',
+        //     'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/08/chana-masala-recipe.jpg',
+        //     [new Ingredient('Chickpeas can', 1),
+        //     new Ingredient('Vegetable Broth Bottle', 1),
+        //     new Ingredient('Lentils cup', 1),
+        //     new Ingredient('Coconut Milk can', 1),
 
-            ]
-        ),
-        new Recipe('Chana Bateta',
-            'This is simply a test ',
-            'https://thismomskitchen.com/wp-content/uploads/Chana-Bateta.jpg',
-            [
-                new Ingredient('Potatoes', 4),
-                new Ingredient('Tomato Sauce Jar', 1),
-                new Ingredient('Chickpeas can', 1),
-            ])]
+        //     ]
+        // ),
+        // new Recipe('Chana Bateta',
+        //     'This is simply a test ',
+        //     'https://thismomskitchen.com/wp-content/uploads/Chana-Bateta.jpg',
+        //     [
+        //         new Ingredient('Potatoes', 4),
+        //         new Ingredient('Tomato Sauce Jar', 1),
+        //         new Ingredient('Chickpeas can', 1),
+        //     ])]
 
+
+    setRecipes(recipes: Recipe[]){
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
 
     getRecipes() {
         return this.recipes.slice();
