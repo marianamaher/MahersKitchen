@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       console.log(!user);
       console.log(!!user);
     })
+    
   }
 
   onSaveData(){
