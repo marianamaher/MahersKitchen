@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
   getApiKey(): string {
-    return window._env.firebaseAPIKey;
+    return (window as any).process?.env.firebaseAPIKey;
     // return process.env.firebaseAPIKey;
   }
 }
