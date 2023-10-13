@@ -24,7 +24,7 @@ export class AuthService {
   private apiKey: string;
 
   constructor(private http: HttpClient, private router: Router, private apiService: ConfigService) {
-    this.apiKey = this.apiService.getApiKey().apiKey;
+    this.apiKey = this.apiService.getApiKey();
    }
   
 
