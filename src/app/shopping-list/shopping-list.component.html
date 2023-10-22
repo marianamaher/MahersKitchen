@@ -19,3 +19,17 @@
      
   </div>
 </div>
+<div class="row">
+  <div class="col-xs-2">
+    <button type="button" class="btn btn-primary" (click)="onShareList()">Share to Phone</button>
+  </div>
+    <div class="col-xs-4"  *ngIf="displayPhoneBox">
+      <input type="tel" id="phone" name="phone" placeholder="+12154557889" [(ngModel)]="phoneID">
+      <button type="button" (click)="onSendToPhone(phoneID)">Send</button>
+    </div>
+    <div class="col-xs-4 sucessMessage"  *ngIf="listSent">
+     <p>
+        Sent ✓
+     </p>
+    </div>
+</div>
